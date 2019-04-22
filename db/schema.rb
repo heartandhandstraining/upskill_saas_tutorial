@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20190421031355) do
 
-  create_table "c_ontacts", force: :cascade do |t|
+  create_table "contacts", force: :cascade do |t|
   end
 
 end
