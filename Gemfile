@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# See note bottom for Heroku
+# Another site to host 3 sites (no custom domains) free https://teamtreehouse.com/community/host-a-website-on-heroku
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.0.0'
@@ -55,6 +57,7 @@ end
 
 group :production do
   # Use the PostgreSQL gem for Heroku production servers
+  # also need downgrade Heroku https://stackoverflow.com/questions/53354444/how-can-i-solve-this-trouble-to-deploy-a-rails-app-to-heroku
   gem 'pg', '0.18.4'
 end
 
