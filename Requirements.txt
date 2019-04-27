@@ -13,10 +13,11 @@ Substitution
 * Modify User Database to store Users Stripe Customer token/id
 * Javascript should prevent Pro form from submitting, when user fills it out,
 * and should send card info to Stripe
-* Initial Card token is sent from Stripe in return. (shopping cart & online stores, one time use and forget about it)
+* Initial Card token is sent from Stripe in return. (shopping cart & online stores, 
+* one time use and forget about it)
 * Javascript send Rails customer email, password, plan for validation & noting of plan
 * Once validated, Rails send user info (email, plan id) with initial card token to Stripe for customer's 
-*subscription creation.
+* subscription creation.
 * Stripe charges customer with first token, creates actual subscription and THEN sends us a Customer token.
 * Rails save customer token and user information to database.
 * (We can use that Customer token to use over and over as needed with the subscription
