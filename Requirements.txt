@@ -15,9 +15,27 @@ Substitution
 * and should send card info to Stripe
 * Initial Card token is sent from Stripe in return. (shopping cart & online stores, 
 * one time use and forget about it)
-* Javascript send Rails customer email, password, plan for validation & noting of plan
+* Javascript send Rails db hidden token, customer email, password fields, & rails also notes plan id
+* not card info
 * Once validated, Rails send user info (email, plan id) with initial card token to Stripe for customer's 
 * subscription creation.
 * Stripe charges customer with first token, creates actual subscription and THEN sends us a Customer token.
-* Rails save customer token and user information to database.
+* Rails save this new customer token and user information to database.
 * (We can use that Customer token to use over and over as needed with the subscription
+
+*Checking for valid card numbers in Google developer console...
+*$('#card_number').val()
+*"4111111111111111"
+*var ccNum = $('#card_number').val()
+*undefined
+*ccNum
+*"4111111111111111"
+*Stripe.card.validateCardNumber(ccNum)
+*true
+*var ccNum = $('#card_number').val()
+
+*undefined
+*ccNum
+*"41111111"
+*Stripe.card.validateCardNumber(ccNum)
+*false
