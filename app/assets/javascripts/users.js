@@ -1,72 +1,58 @@
-/* global Stripe, $ */
-// Document ready function
+/* global $, Stripe */
+//Document ready.
 $(document).on('turbolinks:load', function(){
   var theForm = $('#pro_form');
-  var submitBtn$ = $('#form-signup-btn');
-  // Set Stripe Public Key
+  var submitBtn = $('#form-signup-btn');
+  //Set Stripe public key.
   Stripe.setPublishableKey( $('meta[name="stripe-key"]').attr('content') );
-  
-  // When user clicks form submit btn
+  //When user clicks form submit btn,
   submitBtn.click(function(event){
-    // Javascript prevent default submission to us behavior.
-    event.preventDefault()
+    //prevent default submission behavior.
+    event.preventDefault();
     submitBtn.val("Processing").prop('disabled', true);
-    
-    // Collect credit card fields.
+    //Collect the credit card fields.
     var ccNum = $('#card_number').val(),
         cvcNum = $('#card_code').val(),
         expMonth = $('#card_month').val(),
         expYear = $('#card_year').val();
-        
-    // Use Stripe JS library to check for card errors. 
+    //Use Stripe JS library to check for card errors.
     var error = false;
-    
-    // Validate card number.
-    if(!Stripe.card.validateCardNumber(ccNum)){
+    //Validate card number.
+    if(!Stripe.card.validateCardNumber(ccNum)) {
       error = true;
-      alert('The credit card appears to be invalid.')
-      
+      alert('The credit card number appears to be invalid');
     }
-    
-    // Validate cvc number.
-    if(!Stripe.card.validateCVC(cvcNum)){
+    //Validate CVC number.
+    if(!Stripe.card.validateCVC(cvcNum)) {
       error = true;
-      alert('The credit card appears to be invalid.')
-      
+      alert('The CVC number appears to be invalid');
     }
-    
-    // Validate exp date.
-    
-    if(!Stripe.card.validateExpiry(expMonth, expYear){
+    //Validate expiration date.
+    if(!Stripe.card.validateExpiry(expMonth, expYear)) {
       error = true;
-      alert('The expiration date appears to be invalid.')
-      
+      alert('The expiration date appears to be invalid');
     }
-      
-      if (error) {
-      // don't send to Stripe, so customer can fix
-      submitBtn.prop('disabled', false).val("Sign Up")
-    } else {  
-      // Send that info to Stripe and make function to send listed info, so cust can fix 
+    if (error) {
+      //If there are card errors, don't send to Stripe.
+      submitBtn.prop('disabled', false).val("Sign Up");
+    } else {
+      //Send the card info to Stripe.
       Stripe.createToken({
-        number: ccNum, cvc: cvcNum,
+        number: ccNum,
+        cvc: cvcNum,
         exp_month: expMonth,
         exp_year: expYear
-        // & define what we will do with card token Stripe will return, defined below
       }, stripeResponseHandler);
     }
-    
-      return false;
-    });
-  
-  //Stripe will retur a card token
+    return false;
+  });
+  //Stripe will return a card token.
   function stripeResponseHandler(status, response) {
-    //what Strip sends back will be converted to this token/id
+    //Get the token from the response.
     var token = response.id;
-    // inject it as hidden field to form
+    //Inject the card token in a hidden field.
     theForm.append( $('<input type="hidden" name="user[stripe_card_token]">').val(token) );
-    
-    // Submit form to Rails app.
+    //Submit form to our Rails app.
     theForm.get(0).submit();
-    }
+  }
 });
