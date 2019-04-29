@@ -24,6 +24,10 @@ h1, h2, h3 {
   font-family: 'Open Sans', sans-serif;
 }
 
+h1 {
+  margin-top: 1em;
+}
+
 // Background Gradient
 .navbar, .home-callout {
   //Gradient provided by @_ighosh at uigradients.com
@@ -65,12 +69,22 @@ h1, h2, h3 {
   color: white;
   margin-top: -20px;
   padding-top: 20px;
-  padding-bottom: 75px;
+  padding-bottom: 60px;
 }
 
-.alert-notice {
-  display: none;
+.flash-container {
+  position: absolute;
+  width: 100%;
 }
+
+.alert-notice, .alert-alert {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
 
 .home-signup-links {
   margin-top: 30px;
