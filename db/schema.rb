@@ -33,6 +33,11 @@ ActiveRecord::Schema.define(version: 20190501011625) do
     t.string  "last_name"
     t.string  "job_title"
     t.string  "phone_number"
+    # t.string  "phone_number"
+    # t.string  "contact_email"
+    # t.text    "description"
+    # t.datetime "created_at",     null: false
+    # t.datetime "updated_at",     null: false
   end
 
   create_table "users", force: :cascade do |t|
