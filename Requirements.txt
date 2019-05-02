@@ -23,7 +23,14 @@ Substitution
 * Rails save this new customer token and user information to database.
 * (We can use that Customer token to use over and over as needed with the subscription
 
-*Checking for valid card numbers in Google developer console...
+User Profiles
+*Each user should have 1 profile.
+*User should see a linkto a new profile form upon signing up.
+*User should be able to create and view their user profile.
+*User profile should have a profile picture.
+*Users should be able to view all profiles.
+
+*Checking for valid card numbers in Google developer console
 *$('#card_number').val()
 *"4111111111111111"
 *var ccNum = $('#card_number').val()
