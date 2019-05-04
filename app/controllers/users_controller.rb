@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   # GET to /users/:id
   
   def index
+    @users = User.includes(:profile)
   end
   
   def show
