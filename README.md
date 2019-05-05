@@ -1,6 +1,6 @@
 # README
 
-[HeartandHandsTraining](http://www.heartandhandstraining.com) 
+[My first Ruby-on-Rails Application](https://sleepy-waters-11173.herokuapp.com/)
 
 Software-as-a-Service Ruby on Rails App deployed on Heroku.
 
@@ -15,6 +15,12 @@ Mailgun: To send emails to the users after their subscription to DevMatch
 No payment information is handled through the website during the submission of the Pro plan form. Everything is handled by Stripe, and no sensitive information is stored on the website database.
 
 DevMatch was my fist project using Ruby on Rails to create a SaaS model website. The aim here wasn't focus on the design (very basic) but on the back end.
+
+
+[HeartandHandsTraining](http://www.heartandhandstraining.com) 
+
+
+
 <!--This README would normally document whatever steps are necessary to get the-->
 <!--application up and running.-->
 
