@@ -6,7 +6,7 @@ Software-as-a-Service Ruby on Rails App deployed on Heroku.
 
 DevMatch is a member website where entrepreneurs, developers and investors can connect. DevMatch offers two plans, Basic (free) and Pro (paid).
 
-This website was developed using BootStrap (HTML, CSS, JS) for the front end, and Ruby on Rails for the back end.
+This website was developed using BootStrap (HTML, CSS, JS) for the front end, and Ruby on Rails and the sqlite3 database for the back end.
 
 Two APIs were used:
 
