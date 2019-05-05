@@ -2,13 +2,13 @@
 
 [HeartandHandsTraining](http://www.heartandhandstraining.com) 
 
-Software-as-a-Service Ruby on Rails App
+Software-as-a-Service Ruby on Rails App deployed on Heroku.
 
 DevMatch is a member website where entrepreneurs, developers and investors can connect. DevMatch offers two plans, Basic (free) and Pro (paid).
 
 This website was developed using BootStrap (HTML, CSS, JS) for the front end, and Ruby on Rails for the back end.
 
-Two APIs were used
+Two APIs were used:
 
 Stripe: To allow users to subscribe to the $10/mo Pro plan
 Mailgun: To send emails to the users after their subscription to DevMatch
